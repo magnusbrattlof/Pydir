@@ -4,7 +4,7 @@ import time
 import sys
 import os
 
-# Path initalization
+# Path initialization
 with open('path.config', 'r', encoding='utf-8') as f:
     PATHS = [path.replace('\n', '') for path in f]
 
@@ -26,7 +26,7 @@ def menu(path):
 
 def search(query):
     results = []
-    
+
     for path in PATHS:
         for subdir, rootdir, _ in os.walk(path):
             if query.lower() in [rd.lower() for rd in rootdir]:
